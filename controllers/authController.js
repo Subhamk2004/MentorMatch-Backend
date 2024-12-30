@@ -12,6 +12,9 @@ exports.register = async (req, res) => {
       return res.status(400).json({ message: 'User already exists' });
     }
 
+    console.log(email, password, role);
+    
+
     user = new User({ email, password, role });
     await user.save();
 
